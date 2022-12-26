@@ -1,0 +1,171 @@
+<?php
+
+
+include("db-info.php");
+$link = mysql_connect($server, $user, $pass);
+
+
+$q = "CREATE DATABASE IF NOT EXISTS `$database`";
+if (!mysql_query($q)) die(mysql_error());
+
+if(!mysql_select_db($database)) die(mysql_error());
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `blockedip` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `ip` varchar(20) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `comments` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `imageid` varchar(250) NOT NULL default '',
+  `comment` varchar(250) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+";
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `favourites` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `imageid` varchar(250) NOT NULL default '',
+  `userid` bigint(20) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `galleries` (
+  `id` varchar(250) NOT NULL default '',
+  `userid` bigint(20) NOT NULL default '0',
+  `name` varchar(250) NOT NULL default '',
+  `type` enum('private','public') NOT NULL default 'private',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `images` (
+  `id` varchar(250) NOT NULL default '',
+  `userid` bigint(20) NOT NULL default '-1',
+  `galleryid` varchar(250) NOT NULL default '-1',
+  `image` varchar(250) NOT NULL default '',
+  `thumb` varchar(250) NOT NULL default '',
+  `tags` varchar(250) NOT NULL default '',
+  `details` varchar(30) NOT NULL default '',
+  `type` varchar(20) NOT NULL default 'public',
+  `views` bigint(20) NOT NULL default '0',
+  `ip` varchar(20) NOT NULL default '',
+  `date` varchar(20) NOT NULL default '',
+  `access` date NOT NULL default '0000-00-00',
+  `approved` enum('true','false') NOT NULL default 'false',
+  `adult` enum('true','false') NOT NULL default 'false',
+  `number` bigint(20) NOT NULL auto_increment,
+  PRIMARY KEY  (`number`),
+  KEY `id` (`id`,`userid`,`galleryid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `members` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `username` varchar(30) NOT NULL default '',
+  `password` varchar(30) NOT NULL default '',
+  `userpass` varchar(30) NOT NULL default '',
+  `email` varchar(30) NOT NULL default '',
+  `access` date NOT NULL default '0000-00-00',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `report` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `imageid` varchar(250) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `settings` (
+  `password` varchar(20) NOT NULL default '',
+  `website` varchar(250) NOT NULL default '',
+  `title` varchar(250) NOT NULL default '',
+  `description` varchar(250) NOT NULL default '',
+  `keywords` varchar(250) NOT NULL default '',
+  `maxsizeguest` tinyint(4) NOT NULL default '1',
+  `maxsizemember` tinyint(4) NOT NULL default '2',
+  `watermark` enum('true','false') NOT NULL default 'true'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+
+$q = "INSERT INTO `settings` VALUES ('demo', 'http://www.yoursite.com', 'Yoursite.com', 'description', 'keywords', 1, 2, 'true');";
+if (!mysql_query($q)) die(mysql_error());
+
+
+
+
+
+
+$q = "CREATE TABLE IF NOT EXISTS `warned-accounts` (
+  `id` varchar(250) NOT NULL default '',
+  `userid` bigint(20) NOT NULL default '0',
+  `date` date NOT NULL default '0000-00-00',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+
+if (!mysql_query($q)) die(mysql_error());
+
+
+echo "<font face='courier new' size='4'>Wussa.com ~ Premium Image Hosting PHP script installed successfully.</font>";
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
