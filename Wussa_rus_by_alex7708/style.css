@@ -1,0 +1,186 @@
+
+BODY {
+MARGIN: 0px auto;
+FONT-FAMILY: arial;
+FONT-SIZE: 12px;
+}
+
+
+A {
+FONT-SIZE: 12px
+}
+
+A:hover {
+COLOR: #69c;
+TEXT-DECORATION: none;
+}
+
+
+TABLE {
+FONT-SIZE: 12px;
+}
+
+
+LI {
+FONT-SIZE: 12px;
+COLOR: #808080;
+LINE-HEIGHT: 18px;
+}
+
+
+H1 {
+COLOR: #df713b;
+FONT-SIZE: 24px;
+}
+
+
+H2 {
+COLOR: #df713b;
+FONT-SIZE: 18px;
+}
+
+
+LABEL#TITLE {
+FONT-WEIGHT: bold;
+FONT-SIZE: 12px;
+COLOR: #333;
+}
+
+
+LABEL#TEXT {
+COLOR: #808080;
+FONT-SIZE: 12px;
+}
+
+
+LABEL#MESSAGE {
+FONT-SIZE: 14px;
+}
+
+
+
+.header-top {
+BACKGROUND: #42679c;
+PADDING-TOP: 1px;
+BORDER-BOTTOM: #264b7d 1px solid;
+HEIGHT: 35px;
+WIDTH: 960px
+}
+
+
+.header-top A {
+COLOR: white;
+FONT-SIZE: 12px;
+TEXT-DECORATION: none;
+}
+
+
+.header-menu#current {
+BORDER-RIGHT: #b1ddf6 2px solid;
+BORDER-TOP: #b1ddf6 2px solid;
+BORDER-LEFT: #b1ddf6 2px solid;
+WIDTH: 100px;
+TEXT-ALIGN: center;
+BACKGROUND: white;
+PADDING-BOTTOM: 8px;
+PADDING-TOP: 10px;
+PADDING-LEFT: 15px;
+PADDING-RIGHT: 10px
+}
+
+
+
+.header-menu{
+FONT-SIZE: 12px;
+WIDTH: 100px;
+TEXT-ALIGN: center;
+PADDING-BOTTOM: 8px;
+PADDING-TOP: 10px;
+PADDING-LEFT: 15px;
+PADDING-RIGHT: 10px
+}
+
+
+
+.header-menu A {
+TEXT-DECORATION: none;
+}
+
+
+
+.content-container {
+PADDING-TOP: 25px;
+TEXT-ALIGN: left;
+WIDTH: 960px;
+}
+
+
+.content-box {
+BORDER: #b1ddf6 2px solid;
+PADDING: 10px;
+BACKGROUND: #edf7fd;
+TEXT-ALIGN: left;
+MARGIN-BOTTOM: 10px;
+}
+
+
+
+.content-box.left {
+BORDER-LEFT: #999 1px solid; 
+PADDING-LEFT: 40px;
+}
+
+
+
+.ABOUT {
+MARGIN-TOP: 40px;
+PADDING-RIGHT: 15px;
+BORDER-TOP: #ddd 0.1em solid;
+PADDING-LEFT: 0px;
+FONT-WEIGHT: bold;
+FONT-SIZE: 16px;
+COLOR: #666;
+PADDING-TOP: 1.3em;
+TEXT-ALIGN: center
+}
+
+
+.EMAILBOX {
+BORDER: #b1ddf6 2px solid;
+WIDTH: 300px;
+PADDING-TOP: 10px;
+BACKGROUND: #edf7fd
+}
+
+
+.COMMENTBOX {
+WIDTH: 500px;
+PADDING-TOP: 20px;
+PADDING-BOTTOM: 10px;
+TEXT-ALIGN: left;
+BORDER-TOP: #333 1px dashed;
+}
+
+
+.PRIVATEPASSBOX {
+DISPLAY: none; 
+BORDER: #b1ddf6 2px solid; 
+PADDING: 10px; 
+WIDTH: 400px;
+}
+
+
+.FOOTER {
+CLEAR: left; 
+COLOR: #999; 
+TEXT-ALIGN: center; 
+PADDING-TOP: 20px; 
+PADDING-BOTTOM: 20px; 
+BORDER-TOP: #ddd 1px solid; 
+MARGIN-TOP: 20px;
+}
+
+
+
+
+
